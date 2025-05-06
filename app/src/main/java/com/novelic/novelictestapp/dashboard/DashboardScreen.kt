@@ -45,11 +45,24 @@ fun DashboardScreen(navController: NavController) {
             text = stringResource(R.string.grid_configuration),
             style = MaterialTheme.typography.displaySmall
         )
-        GridConfigurationSelection()
+
+        val (selectedOption, onOptionSelected) = remember { mutableStateOf(GridConfigurationOptions[0]) }
+
+        GridConfigurationSelection(
+            selectedOption = selectedOption,
+            onOptionSelected = onOptionSelected
+        )
 
         Spacer(Modifier.height(32.dp))
 
-        Button(onClick = { navController.navigate(Radar) }) {
+        Button(onClick = {
+            when (selectedOption) {
+                "0m - 2m" -> navController.navigate(Radar(2))
+                "0m - 10m" -> navController.navigate(Radar(10))
+                "0m - 100m" -> navController.navigate(Radar(100))
+            }
+
+        }) {
             Text(
                 stringResource(R.string.start),
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold)
@@ -61,9 +74,12 @@ fun DashboardScreen(navController: NavController) {
 val GridConfigurationOptions = listOf("0m - 2m", "0m - 10m", "0m - 100m")
 
 @Composable
-fun GridConfigurationSelection(modifier: Modifier = Modifier) {
+fun GridConfigurationSelection(
+    modifier: Modifier = Modifier,
+    selectedOption: String,
+    onOptionSelected: (String) -> Unit
+) {
 
-    val (selectedOption, onOptionSelected) = remember { mutableStateOf(GridConfigurationOptions[0]) }
 
     Column(modifier = Modifier.selectableGroup()) {
         GridConfigurationOptions.forEach { text ->
@@ -90,5 +106,4 @@ fun GridConfigurationSelection(modifier: Modifier = Modifier) {
             }
         }
     }
-
 }
