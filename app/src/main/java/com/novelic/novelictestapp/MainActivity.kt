@@ -37,8 +37,8 @@ fun Content() {
                 navController = navController,
                 startDestination = Dashboard
             ) {
-                dashboardDestination()
-                radarDestination()
+                dashboardDestination(navController)
+                radarDestination(navController)
             }
 
         }
