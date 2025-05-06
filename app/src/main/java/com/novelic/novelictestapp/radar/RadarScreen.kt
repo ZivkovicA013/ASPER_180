@@ -48,7 +48,7 @@ fun RadarScreen() {
 
 
 @Composable
-fun RadarGrid() {
+fun RadarGrid(modifier: Modifier = Modifier) {
 
     val textMeasure = rememberTextMeasurer()
     val lineColor = MaterialTheme.colorScheme.secondary
@@ -115,7 +115,7 @@ fun RadarGrid() {
 }
 
 @Composable
-fun RadarFooter() {
+fun RadarFooter(modifier: Modifier = Modifier) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
