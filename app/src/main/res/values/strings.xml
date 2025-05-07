@@ -5,5 +5,5 @@
     <string name="novelic">NOVELIC</string>
     <string name="dashborad_headline">ASPER 180° Testing Application by NOVELIC</string>
     <string name="start">START</string>
-    <string name="grid_configuration">Grid configuration : </string>
+    <string name="grid_size">Select Grid Size : </string>
 </resources>

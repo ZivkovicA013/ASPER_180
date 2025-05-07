@@ -26,7 +26,6 @@ import androidx.navigation.NavController
 import com.novelic.novelictestapp.R
 import com.novelic.novelictestapp.radar.Radar
 
-
 @Composable
 fun DashboardScreen(navController: NavController) {
     Column(
@@ -42,7 +41,7 @@ fun DashboardScreen(navController: NavController) {
         Spacer(Modifier.height(64.dp))
 
         Text(
-            text = stringResource(R.string.grid_configuration),
+            text = stringResource(R.string.grid_size),
             style = MaterialTheme.typography.displaySmall
         )
 
