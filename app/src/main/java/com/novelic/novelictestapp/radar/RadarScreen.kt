@@ -26,10 +26,11 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.novelic.novelictestapp.R
 
 @Composable
-fun RadarScreen() {
+fun RadarScreen(navController: NavController, gridSize: Int) {
     Column(
         modifier = Modifier
             .padding(start = 16.dp, top = 32.dp, bottom = 32.dp)
